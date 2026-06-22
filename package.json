@@ -1,0 +1,25 @@
+{
+  "name": "falkon-reviews",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "concurrently \"json-server --watch db.json --port 3001\" \"react-scripts start\"",
+    "server": "json-server --watch db.json --port 3001",
+    "client": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  }
+}
