@@ -88,20 +88,19 @@
 .card-pedido__btn-avaliar {
   width: 100%;
   padding: 0.65rem 1rem;
-  background: var(--color-accent-glow);
-  color: #c4b5fd;
-  border: 1px solid rgba(123, 92, 250, 0.4);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
-  font-weight: 500;
-  transition: background var(--transition), border-color var(--transition), color var(--transition);
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
   text-align: center;
 }
 
 .card-pedido__btn-avaliar:hover {
-  background: rgba(123, 92, 250, 0.35);
-  border-color: var(--color-accent);
-  color: #fff;
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
 }
 
 .card-pedido__btn-avaliar strong {

@@ -17,15 +17,13 @@
 .logo-falkon {
   font-size: 1.3rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.05em;
   color: var(--color-text);
-  font-family: var(--font-mono);
 }
 
 .logo-tag {
-  font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-left: 8px;
 }
 
@@ -43,15 +41,15 @@
 }
 
 .usuario-info__nivel {
-  font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--color-accent);
-  background: var(--color-accent-glow);
-  border: 1px solid rgba(123, 92, 250, 0.3);
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   padding: 2px 8px;
   border-radius: 999px;
+  text-transform: uppercase;
 }
 
 .usuario-info__nome {

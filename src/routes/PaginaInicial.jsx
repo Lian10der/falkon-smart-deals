@@ -1,10 +1,24 @@
+import { useAuth } from '../context/AuthContext';
 import { useReviews } from '../hooks/useReviews';
+import { useNavigate, Link } from 'react-router-dom';
 import CardPedido from '../components/CardPedido';
-import { USUARIO_ID } from '../App';
 import '../styles/PaginaInicial.css';
 
 function PaginaInicial() {
-  const { usuario, pedidosComProduto, loading, erro } = useReviews(USUARIO_ID);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { usuario, pedidosComProduto, loading, erro } = useReviews(user?.id || null);
+
+  // Se não estiver logado, mostra tela para fazer login
+  if (!user) {
+    return (
+      <div className="erro-state" style={{ minHeight: 'calc(100vh - 60px)' }}>
+        <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Faça login para ver suas compras</p>
+        <Link to="/login" className="btn btn-primary">Entrar</Link>
+        <Link to="/cadastro" className="btn btn-secondary" style={{ marginTop: '0.5rem' }}>Criar conta</Link>
+      </div>
+    );
+  }
 
   if (loading) {
     return (

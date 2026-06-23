@@ -1,0 +1,139 @@
+.produto-detalhe {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.produto-detalhe__voltar {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.produto-detalhe__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.produto-detalhe__img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background: var(--color-surface-2);
+}
+
+.produto-detalhe__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.produto-detalhe__nome {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.produto-detalhe__preco {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.produto-detalhe__descricao {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.produto-detalhe__meta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.produto-detalhe__nota {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.produto-detalhe__nota-num {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-warning);
+}
+
+/* Avaliações */
+.avaliacoes-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.avaliacoes-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.avaliacoes-vazias {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.avaliacoes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.avaliacao-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.avaliacao-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.avaliacao-card__usuario {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.avaliacao-card__data {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.avaliacao-card__estrelas {
+  font-size: 0.9rem;
+  color: var(--color-warning);
+  margin-bottom: 0.35rem;
+}
+
+.avaliacao-card__nota-num {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.avaliacao-card__comentario {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .produto-detalhe__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -98,7 +98,7 @@
 .meta-nota-num {
   font-family: var(--font-mono);
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-warning);
   font-size: 0.9rem;
 }
 
@@ -161,7 +161,7 @@
 
 .nota-label-texto {
   font-size: 0.85rem;
-  color: var(--color-gold);
+  color: var(--color-warning);
   font-weight: 600;
   font-family: var(--font-mono);
 }

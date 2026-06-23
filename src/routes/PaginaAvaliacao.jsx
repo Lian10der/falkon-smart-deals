@@ -1,15 +1,25 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { useReviews } from '../hooks/useReviews';
 import StarRating from '../components/StarRating';
 import BadgeCategoria from '../components/BadgeCategoria';
-import { USUARIO_ID } from '../App';
 import '../styles/PaginaAvaliacao.css';
 
 function PaginaAvaliacao() {
   const { pedidoId } = useParams();
   const navigate = useNavigate();
-  const { usuario, pedidosComProduto, loading, erro, enviarAvaliacao } = useReviews(USUARIO_ID);
+  const { user } = useAuth();
+  const { usuario, pedidosComProduto, loading, erro, enviarAvaliacao } = useReviews(user?.id || null);
+
+  if (!user) {
+    return (
+      <div className="erro-state" style={{ minHeight: 'calc(100vh - 60px)' }}>
+        <p style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Faça login para avaliar um produto</p>
+        <Link to="/login" className="btn btn-primary">Entrar</Link>
+      </div>
+    );
+  }
 
   const [notaSelecionada, setNotaSelecionada] = useState(0);
   const [comentario, setComentario] = useState('');

@@ -17,6 +17,12 @@ export function useReviews(usuarioId) {
   const [erro, setErro] = useState(null);
 
   const carregarDados = useCallback(async () => {
+    if (!usuarioId) {
+      setLoading(false);
+      setUsuario(null);
+      setPedidosComProduto([]);
+      return;
+    }
     setLoading(true);
     setErro(null);
     try {

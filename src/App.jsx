@@ -1,19 +1,33 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import Navbar from './components/Navbar';
 import PaginaInicial from './routes/PaginaInicial';
 import PaginaAvaliacao from './routes/PaginaAvaliacao';
-
-// Usuário logado fixo para simulação (Bruno Souza, que tem pedidos entregues)
-export const USUARIO_ID = '2';
+import Login from './routes/Login';
+import Cadastro from './routes/Cadastro';
+import Produtos from './routes/Produtos';
+import ProdutoDetalhe from './routes/ProdutoDetalhe';
+import AdminUsuarios from './routes/AdminUsuarios';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<PaginaInicial />} />
-        <Route path="/avaliar/:pedidoId" element={<PaginaAvaliacao />} />
-      </Routes>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/" element={<PaginaInicial />} />
+          <Route path="/avaliar/:pedidoId" element={<PaginaAvaliacao />} />
+          <Route path="/produtos" element={<Produtos />} />
+          <Route path="/produto/:id" element={<ProdutoDetalhe />} />
+          <Route path="/admin/usuarios" element={<AdminUsuarios />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
 
 export default App;
+
