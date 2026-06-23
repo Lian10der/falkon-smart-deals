@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.083e3598.css",
-    "main.js": "/static/js/main.fb31ef15.js",
-    "index.html": "/index.html",
-    "main.083e3598.css.map": "/static/css/main.083e3598.css.map",
-    "main.fb31ef15.js.map": "/static/js/main.fb31ef15.js.map"
+    "main.css": "/Lian10der/falkon-smart-deals/static/css/main.0b9e845e.css",
+    "main.js": "/Lian10der/falkon-smart-deals/static/js/main.c7c0169d.js",
+    "index.html": "/Lian10der/falkon-smart-deals/index.html",
+    "main.0b9e845e.css.map": "/Lian10der/falkon-smart-deals/static/css/main.0b9e845e.css.map",
+    "main.c7c0169d.js.map": "/Lian10der/falkon-smart-deals/static/js/main.c7c0169d.js.map"
   },
   "entrypoints": [
-    "static/css/main.083e3598.css",
-    "static/js/main.fb31ef15.js"
+    "static/css/main.0b9e845e.css",
+    "static/js/main.c7c0169d.js"
   ]
 }

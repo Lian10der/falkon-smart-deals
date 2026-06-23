@@ -10,7 +10,7 @@ function AdminUsuarios() {
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(null);
   const [editando, setEditando] = useState(null);
-  const [form, setForm] = useState({ nome: '', email: '', senha: '', nivel: 'comum', carteira_saldo: 0 });
+  const [form, setForm] = useState({ nome: '', email: '', senha: '', nivel: 'comum'});
 
   useEffect(() => {
     if (!user || !isAdmin) {
@@ -69,7 +69,7 @@ function AdminUsuarios() {
 
   const iniciarEdicao = (u) => {
     setEditando(u.id);
-    setForm({ nome: u.nome, email: u.email, senha: '', nivel: u.nivel, carteira_saldo: u.carteira_saldo });
+    setForm({ nome: u.nome, email: u.email, senha: '', nivel: u.nivel,  });
   };
 
   if (loading) {
@@ -101,7 +101,6 @@ function AdminUsuarios() {
             <th>Nome</th>
             <th>Email</th>
             <th>Nível</th>
-            <th>Carteira</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -136,14 +135,6 @@ function AdminUsuarios() {
                       <option value="admin">admin</option>
                     </select>
                   </td>
-                  <td>
-                    <input
-                      className="input-field input-sm"
-                      type="number"
-                      value={form.carteira_saldo}
-                      onChange={(e) => setForm({ ...form, carteira_saldo: Number(e.target.value) })}
-                    />
-                  </td>
                   <td className="admin-acoes">
                     <button className="btn btn-primary btn-sm" onClick={handleSalvarEdicao}>Salvar</button>
                     <button className="btn btn-secondary btn-sm" onClick={() => setEditando(null)}>Cancelar</button>
@@ -155,7 +146,6 @@ function AdminUsuarios() {
                   <td>{u.nome}</td>
                   <td>{u.email}</td>
                   <td><span className={`admin-nivel admin-nivel--${u.nivel}`}>{u.nivel}</span></td>
-                  <td>R$ {u.carteira_saldo?.toFixed(2).replace('.', ',')}</td>
                   <td className="admin-acoes">
                     <button className="btn btn-primary btn-sm" onClick={() => iniciarEdicao(u)}>Editar</button>
                     <button className="btn btn-danger btn-sm" onClick={() => handleExcluir(u.id)}>Excluir</button>
