@@ -151,6 +151,15 @@
       "data": "2026-06-01",
       "status": "entregue",
       "valor_pago": 290
+    },
+    {
+      "id": "105",
+      "usuarioId": "3",
+      "produtoId": "7",
+      "quantidade": 1,
+      "data": "2026-06-07",
+      "status": "entregue",
+      "valor_pago": 480
     }
   ],
   "cupons": [
@@ -187,13 +196,7 @@
       "id": 1
     },
     {
-      "pedidoId": "102",
-      "produtoId": "4",
-      "usuarioId": "3",
-      "nota": 5,
-      "comentario": "Execelente canela.",
-      "data": "2026-06-23",
-      "id": 2
+
     }
   ]
 }
